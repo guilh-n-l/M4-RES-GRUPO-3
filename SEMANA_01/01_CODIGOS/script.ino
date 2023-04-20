@@ -14,7 +14,7 @@ String createTruth(bool argBool, String argString, int argInt, float argFloat) {
       boolVal = " poderia ser falso";
     }
   }
-  String message = argString + boolVal + " com " + String(argFloat, 2) + "% de confianca, calculado em uma velocidade de " + String(argInt) + "Km/h";
+  String message = argString + boolVal + " com " + String(argFloat, 0) + "% de confianca, calculado em uma velocidade de " + String(argInt) + "Km/h";
   boolSwitch = true;
   return message;
 } 
