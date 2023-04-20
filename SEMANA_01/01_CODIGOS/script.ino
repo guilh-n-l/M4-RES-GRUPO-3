@@ -3,25 +3,25 @@ bool boolSwitch = false;
 String createTruth(bool argBool, String argString, int argInt, float argFloat) {
   String boolVal;
   if(argBool == true) {
-    boolVal = " is True";
+    boolVal = " eh verdadeiro";
     if(argFloat < 50) {
-      boolVal = " should be True";
+      boolVal = " poderia ser verdadeiro";
     }
   }
   else {
-    boolVal = " is False";
+    boolVal = " eh falso";
     if(argFloat < 50) {
-      boolVal = " should be False";
+      boolVal = " poderia ser falso";
     }
   }
-  String message = argString + boolVal + " with " + String(argFloat, 2) + "% of confidence, calculated by a wopping speed of " + String(argInt) + "Km/h";
+  String message = argString + boolVal + " com " + String(argFloat, 2) + "% de confianca, calculado em uma velocidade de " + String(argInt) + "Km/h";
   boolSwitch = true;
   return message;
 } 
 
 void setup() {
   Serial.begin(9600);
-  Serial.println("Enter a statement, it's truth value, and the level of confidence (Ex.: 'Dogs > Cats, true, 95')");
+  Serial.println("Declare algo, e se eh 'TRUE' ou 'FALSE', e o nivel de confianca (Ex.: 'Dogs > Cats, true, 95')");
 }
 
 void loop() {
