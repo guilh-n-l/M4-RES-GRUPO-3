@@ -4,27 +4,31 @@ String createTruth(bool argBool, String argString, int argInt, float argFloat) {
   String boolVal;
   // Verifica se o argumento é true ou false
   if(argBool == true) {
+    // Caso seja verdadeiro, retorna:
     boolVal = " eh verdadeiro";
     // Verifica se o argumento float é menor que 50
     if(argFloat < 50) {
+      // Caso seja menor que 50, retorna:
       boolVal = " poderia ser verdadeiro";
     }
   }
+  // Caso não entre na condição acima, verifica se entra na de baixo
   else {
     boolVal = " eh falso";
     // Verifica se o argumento float é menor que 50
     if(argFloat < 50) {
+      // Caso seja menor que 50, retorna:
       boolVal = " poderia ser falso";
     }
   }
   // Cria uma mensagem com os argumentos
-  String message = argString + boolVal + " com " + String(argFloat, 0) + "% de confianca, calculado em uma velocidade de " + String(argInt) + "Km/h\n";
+  String message = argString + boolVal + " Com " + String(argFloat, 0) + "% de confianca, calculado em uma velocidade de " + String(argInt) + "Km/h\n";
   // Retorna a mensagem criada
   return message;
 } 
 
 void setup() {
-  // Inicializa a comunicação Serial
+  // Dá inicio a comunicação Serial
   Serial.begin(9600);
 }
 
