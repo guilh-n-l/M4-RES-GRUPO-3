@@ -29,7 +29,7 @@ void setup() {
   // Inicializa a comunicação Serial
   Serial.begin(9600);
   // Imprime uma mensagem para o usuário
-  Serial.println("Declare algo, e se eh 'TRUE' ou 'FALSE', e o nivel de confianca (Ex.: 'Dogs > Cats, true, 95')");
+  Serial.println("Declare algo, se 'TRUE' ou 'FALSE', e o nivel de confianca (Ex.: 'Dogs > Cats, true, 95')");
 }
 
 void loop() {
