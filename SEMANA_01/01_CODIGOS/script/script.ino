@@ -18,9 +18,7 @@ String createTruth(bool argBool, String argString, int argInt, float argFloat) {
     }
   }
   // Cria uma mensagem com os argumentos
-  String message = argString + boolVal + " com " + String(argFloat, 0) + "% de confianca, calculado em uma velocidade de " + String(argInt) + "Km/h";
-  // Atualiza o valor do boolSwitch para true
-  boolSwitch = true;
+  String message = argString + boolVal + " com " + String(argFloat, 0) + "% de confianca, calculado em uma velocidade de " + String(argInt) + "Km/h\n";
   // Retorna a mensagem criada
   return message;
 } 
@@ -28,11 +26,11 @@ String createTruth(bool argBool, String argString, int argInt, float argFloat) {
 void setup() {
   // Inicializa a comunicação Serial
   Serial.begin(9600);
-  // Imprime uma mensagem para o usuário
-  Serial.println("Declare algo, se 'TRUE' ou 'FALSE', e o nivel de confianca (Ex.: 'Dogs > Cats, true, 95')");
 }
 
 void loop() {
+  // Imprime uma mensagem para o usuário
+  Serial.println("Declare algo, se 'TRUE' ou 'FALSE', e o nivel de confianca (Ex.: 'Dogs > Cats, true, 95')");
   // Enquanto boolSwitch for false, faça:
   while (boolSwitch == false) {
     // Verifica se existem dados disponíveis na Serial
@@ -51,6 +49,8 @@ void loop() {
       float confidence = wholeString.substring(secondComma + 2).toFloat();
       // Imprime a mensagem criada com os argumentos
       Serial.println(createTruth(truthValue, statement, 100, confidence));
+      // Interrompe o while para pedir outra declaração pelo println	
+      break;
     }
   }
 }
